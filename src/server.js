@@ -60,5 +60,5 @@ app.post('/api/articles/:name/add-comment', (req, res) => {
         res.status(200).json(updatedArticleInfo);
     }, res);
 });
-
+//starts the local host server
 app.listen(8000, () => console.log('Listening on port 8000'));
