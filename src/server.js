@@ -62,4 +62,5 @@ app.post('/api/articles/:name/add-comment', (req, res) => {
 });
 //Seeing if I can make committs
 //starts the local host server
+//Need to add another committ for class
 app.listen(8000, () => console.log('Listening on port 8000'));
