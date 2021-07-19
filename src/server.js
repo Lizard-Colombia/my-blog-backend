@@ -46,6 +46,41 @@ app.post('/api/articles/:name/upvote', async (req, res) => {
         res.status(200).json(updatedArticleInfo);
     }, res);
 });
+//code put in during class 7/15/21--broken
+// app.post('/api/articles/:name/add-article', async (req, res) => {
+//     withDB(async (db) => {
+//         const articleName = req.params.name;
+//         const { username, content } = req.body;
+
+//             var newArticle;
+//             newArticle.content=content;
+//             newArticle.name=articleName;
+
+//          var result = await db.collection('articles').insertOne(newArticle);
+
+//          res.status(200).json(result);
+
+//     }, res);
+// });
+//end of code from class
+
+//attempt to fix broken class code
+app.post('/api/articles/:name/add-article', async (req, res) => {
+    withDB(async (db) => {
+        const articleName = req.params.name;
+        const { username, content } = req.body;
+
+            var newArticle;
+            newArticle.content=content;
+            newArticle.name=articleName;
+
+         var result = await db.collection('articles').insertOne(newArticle);
+
+         res.status(200).json(result);
+
+    }, res);
+});
+//end of attempt to fix broken class code
 
 app.post('/api/articles/:name/add-comment', (req, res) => {
     const { username, text } = req.body;
